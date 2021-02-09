@@ -1,9 +1,14 @@
 class Shoe
   attr_accessor :color, :size, :material, :condition
-  attr_reader :brand
+  # I removed this line of code - attr_reader :brand
+  BRANDS = []
 
   def initialize(brand)
     @brand = brand
+
+    if !BRANDS.include? brand
+      BRANDS.push(brand)
+    end
   end
 
   def cobble
